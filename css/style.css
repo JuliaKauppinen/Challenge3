@@ -1,0 +1,158 @@
+html {
+	box-sizing: border-box;
+	height: 100vh;
+}
+
+*, 
+*:before,
+*:after{
+	box-sizing: inherit;
+}
+
+body {
+  background-color: #013172;
+  margin: 0;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: .5px;
+}
+
+/*----------- opstelling grids -------------*/
+.grid-container {
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 1fr;
+
+	grid-template-areas:
+	"logo"
+	"field"
+	"map";
+}
+
+#divLogo {
+	grid-area: logo;
+}
+
+#divField {
+	grid-area: field;
+}
+
+#logo {
+	min-width: 200px;
+	max-width: 20%;
+	display: block;
+	margin: auto;
+}
+
+#map {
+	grid-area: map;
+	width: 90%;
+	margin: auto;
+	margin-top: 20px;
+	height: 65vh;
+}
+
+/* hele box om temperatuur te krijgen van een stad */
+fieldset {
+	color: white;
+	margin: auto;
+	margin-top: 20px;
+	min-width: 480px;
+	max-width: 40%;
+	border: none;
+}
+
+/* invul veld van de gebruiker */
+#city {
+	margin: 0px 5px 0px 5px;
+}
+
+/* getWeather is de button */
+#getWeather:hover {
+	background-color: #f9f3e4;
+	font-weight: bold;
+}
+
+#getWeather:active {
+  background-color: #f1eadb;
+  box-shadow: 0 5px #666;
+  transform: translateY(3px);
+}
+
+#getWeather, #city {
+	font-size: .8em;
+	color: #013172;
+	border-radius: 5px;
+	border-width: 0px;
+	padding: 5px;
+}
+
+#getWeather {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+/* box waar antwoord in komt te staan */
+#weather {
+	color: white;
+	text-align: center;
+	min-width: 480px;
+	max-width: 40%;
+	margin: auto;
+	margin-top: 5px;
+}
+
+/* combinatie van 'enter city name', invulveld en button */
+.fillIn {
+	margin-top: 20px;
+}
+
+.hidden {
+	display: none;
+}
+
+/*------------------------------ Grote telefoon ------------------------------------*/
+@media only screen and (min-width: 620px) {
+#map {
+	width: 95%;
+}
+}
+/*------------------------------ Kleine laptop ------------------------------------*/
+@media only screen and (min-width: 1024px) {		
+
+/*----------- opstelling grids -------------*/
+.grid-container {
+	grid-template-columns: 1fr 1fr;
+
+	grid-template-areas:
+	"logo 	logo"
+	"field	map";
+}
+
+#map {
+	width: 95%;
+	height: 82vh;
+}
+
+#divField {
+	margin-top: 40%;
+}
+}
+/*------------------------------ Grote laptop ------------------------------------*/
+@media only screen and (min-width: 1280px) {
+
+/*----------- opstelling grids -------------*/
+.grid-container {
+	grid-template-columns: 1fr 1fr 1fr;
+
+	grid-template-areas:
+	"logo 	logo 	logo"
+	"field	map 	map";
+}
+
+#map {
+	width: 95%;
+	height: 80vh;
+}
+
+}
